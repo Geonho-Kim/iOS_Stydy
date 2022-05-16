@@ -3,7 +3,12 @@ import UIKit
 // 도전과제
 // 1. 강의 이름, 강사 이름, 학생수를 가지는 Struct 만들기 (Lecture)
 
-struct Lecture{
+// CustomStringConvertible(Protocol)
+
+struct Lecture: CustomStringConvertible{
+    var description: String{    // Computed Property
+        return "Title: \(name), TeacherName: \(teacherName)"
+    }
     let name: String
     let teacherName: String
     let numOfStudent: Int
@@ -33,3 +38,7 @@ let lecture3 = Lecture(name: "iOS Pro", teacherName: "Jim", numOfStudent: 5)
 let lectures = [lecture1,lecture2,lecture3]
 
 printLectureName(from: "Jason", lectures: lectures)
+
+
+// CustomStringConvertible(Protocol)
+print(lecture1)
